@@ -26,6 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator'; // Optional if you use pagination
 import { MatIconModule } from '@angular/material/icon'; // Optional for icons
 import { MatGridListModule } from '@angular/material/grid-list'; 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // Import MatSlideToggleModule
 
 // Import NavigationService
 import { NavigationService } from './services/navigation.service'; // Adjust the path if necessary
@@ -56,7 +57,8 @@ import { NavigationService } from './services/navigation.service'; // Adjust the
     MatSelectModule,
     MatPaginatorModule,
     MatIconModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSlideToggleModule
   ],
   providers: [NavigationService,
     provideAnimations()
