@@ -1,0 +1,43 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.completed {
+  color: green;
+  font-weight: bold;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.table-container {
+  padding: 16px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.search-field {
+  flex: 1;
+  margin-right: 16px;
+}
+
+.filter-field {
+  margin-left: 16px;
+}
+
+.mat-icon-button {
+  margin-left: 16px;
+}
