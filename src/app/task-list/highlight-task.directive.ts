@@ -4,8 +4,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
   selector: '[appHighlightTask]'
 })
 export class HighlightTaskDirective {
-  @Input() appHighlightTask!: string; // Use definite assignment operator
-
+  @Input() appHighlightTask!: string; 
   constructor(private el: ElementRef) {}
 
   @HostListener('mouseenter') onMouseEnter() {
@@ -13,10 +12,10 @@ export class HighlightTaskDirective {
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.highlight(null); // Passing null is now acceptable
+    this.highlight(null); 
   }
 
   private highlight(color: string | null) {
-    this.el.nativeElement.style.backgroundColor = color ? color : ''; // Reset to default if null
+    this.el.nativeElement.style.backgroundColor = color ? color : ''; 
   }
 }

@@ -1,4 +1,3 @@
-// task-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services/task.service';
 import { Task } from '../../models/Task';
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css']
+  styleUrls: ['./task-list.component.css'],
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
@@ -21,7 +20,7 @@ export class TaskListComponent implements OnInit {
   currentPage: number = 1;
   totalPages: number = 0;
   pageSizes: number[] = [5, 10, 20];
-  selectedStatus: string = ''; // For filtering by status
+  selectedStatus: string = ''; 
   private searchSubject: Subject<string> = new Subject<string>();
 
   constructor(private taskService: TaskService, private router: Router) {}
@@ -32,7 +31,7 @@ export class TaskListComponent implements OnInit {
   }
 
   loadTasks(): void {
-    this.tasks = this.taskService.getTasks(); // Fetch tasks based on the logged-in user's ID
+    this.tasks = this.taskService.getTasks(); 
     this.updatePagination();
   }
 
@@ -45,7 +44,7 @@ export class TaskListComponent implements OnInit {
   filterTasks(): Task[] {
     return this.tasks.filter(task => 
       task.name.toLowerCase().includes(this.searchTerm.toLowerCase()) &&
-      (this.selectedStatus ? task.status === this.selectedStatus : true) // Filter by status if selected
+      (this.selectedStatus ? task.status === this.selectedStatus : true) 
     );
   }
 
@@ -60,39 +59,39 @@ export class TaskListComponent implements OnInit {
       distinctUntilChanged()
     ).subscribe(term => {
       this.searchTerm = term;
-      this.currentPage = 1; // Reset to first page on new search
+      this.currentPage = 1; 
       this.updatePagination();
     });
   }
 
   changePage(event: PageEvent): void {
     this.pageSize = event.pageSize;
-    this.currentPage = event.pageIndex + 1; // pageIndex is zero-based
+    this.currentPage = event.pageIndex + 1; 
     this.updatePagination();
   }
 
   onPageSizeChange(event: Event): void {
     const select = event.target as HTMLSelectElement;
     this.pageSize = Number(select.value);
-    this.currentPage = 1; // Reset to first page on page size change
+    this.currentPage = 1; 
     this.updatePagination();
   }
 
   onStatusChange(event: MatSelectChange): void {
-    this.selectedStatus = event.value; // Update the selected status
-    this.currentPage = 1; // Reset to first page on status change
-    this.updatePagination(); // Update pagination based on the new filter
+    this.selectedStatus = event.value; 
+    this.currentPage = 1; 
+    this.updatePagination(); 
   }
 
   toggleStatus(task: Task): void {
     task.status = task.status === 'Pending' ? 'Completed' : 'Pending';
     this.taskService.editTask(task);
-    this.updatePagination(); // Update the displayed tasks after status change
+    this.updatePagination(); 
   }
 
   deleteTask(taskId: number): void {
     this.taskService.deleteTask(taskId);
-    this.loadTasks(); // Reload tasks after deletion
+    this.loadTasks(); 
   }
 
   navigateToAddTask(): void {

@@ -9,11 +9,6 @@ import { User } from '../../models/User';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  // name = '';
-  // phoneNo = 0;
-  // email = '';
-  // password = '';
-  // user : User
 
   user : User = { id:0,name: '', phoneNo:'', email: '',password:'' };
   constructor(private userService: UserService, private router: Router) { }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -23,25 +23,29 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
-import { MatPaginatorModule } from '@angular/material/paginator'; // Optional if you use pagination
-import { MatIconModule } from '@angular/material/icon'; // Optional for icons
+import { MatPaginatorModule } from '@angular/material/paginator'; 
+import { MatIconModule } from '@angular/material/icon'; 
 import { MatGridListModule } from '@angular/material/grid-list'; 
-import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // Import MatSlideToggleModule
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'; 
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 // Import NavigationService
-import { NavigationService } from './services/navigation.service'; // Adjust the path if necessary
+import { NavigationService } from './services/navigation.service'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    UserDetailsComponent,
     HomeComponent,
     TaskListComponent,
     TaskFormComponent,
     TaskStatusFilterPipe,
-    HighlightTaskDirective
+    HighlightTaskDirective,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,11 +62,16 @@ import { NavigationService } from './services/navigation.service'; // Adjust the
     MatPaginatorModule,
     MatIconModule,
     MatGridListModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatSidenavModule,
+    MatListModule,
+    MatMenuModule,
+    //UserDetailsComponent
   ],
+  // exports:[UserDetailsComponent],
   providers: [NavigationService,
     provideAnimations()
   ], // Add NavigationService here if desired
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 

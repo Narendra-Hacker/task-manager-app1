@@ -13,11 +13,11 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'user-details',component:UserDetailsComponent, canActivate: [authGuard]},
-  { path: 'home', component: HomeComponent, canActivate: [authGuard] }, // Protect this route
+  { path: 'home', component: HomeComponent, canActivate: [authGuard] }, 
   {path:'task-list',component:TaskListComponent, canActivate: [authGuard]},
   {path:'task-form',component:TaskFormComponent, canActivate: [authGuard]},
-  {path:'',redirectTo:'/login',pathMatch:'full'}, //default route
-  { path: '**', redirectTo: '/login' } // Redirect unknown paths to login
+  {path:'',redirectTo:'/login',pathMatch:'full'}, 
+  { path: '**', redirectTo: '/login' } 
 ];
 
 @NgModule({
