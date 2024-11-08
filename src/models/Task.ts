@@ -6,4 +6,5 @@ export interface Task {
     startDate: Date;
     endDate: Date;
     status: string;
+    userId:number;
 }

@@ -56,4 +56,9 @@ user.id
    this.loggedInUser = null;
    localStorage.removeItem(this.loggedInUserKey); // Clear the persisted logged-in user
  }
+ 
+  // Get logged-in user's ID
+  getLoggedInUserId(): number | null {
+    return this.loggedInUser  ? this.loggedInUser .id : null; // Return the logged-in user's ID
+  }
 }

@@ -16,7 +16,8 @@ export class TaskFormComponent {
     description: '',
     startDate: new Date(),
     endDate: new Date(),
-    status: 'Pending'
+    status: 'Pending',
+    userId:0,
   };
   daysRequired: number = 0;
 
@@ -39,7 +40,8 @@ export class TaskFormComponent {
         description: '',
         startDate: new Date(),
         endDate: new Date(),
-        status: 'Pending'
+        status: 'Pending',
+        userId:0,
       }
 
       // Here you would call a service to save the task and set up email notifications

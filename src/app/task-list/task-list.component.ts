@@ -1,17 +1,17 @@
+// task-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../services/task.service';
 import { Task } from '../../models/Task';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { PageEvent } from '@angular/material/paginator'; // Import PageEvent
-import { MatSelectChange } from '@angular/material/select'; // Import MatSelectChange
+import { PageEvent } from '@angular/material/paginator';
+import { MatSelectChange } from '@angular/material/select';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css'] // Corrected from styleUrl to styleUrls
+  styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
@@ -32,7 +32,7 @@ export class TaskListComponent implements OnInit {
   }
 
   loadTasks(): void {
-    this.tasks = this.taskService.getTasks();
+    this.tasks = this.taskService.getTasks(); // Fetch tasks based on the logged-in user's ID
     this.updatePagination();
   }
 
@@ -95,7 +95,7 @@ export class TaskListComponent implements OnInit {
     this.loadTasks(); // Reload tasks after deletion
   }
 
-  navigateToAddTask(){
+  navigateToAddTask(): void {
     console.log("navigate to add task");
     this.router.navigate(['/task-form']);
   }
