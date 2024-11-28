@@ -1,6 +1,6 @@
 // services/task.service.ts
 import { Injectable } from '@angular/core';
-import { Task } from '../../models/Task';
+import { Task } from '../models/Task';
 import { UserService } from './user.service';
 
 @Injectable({

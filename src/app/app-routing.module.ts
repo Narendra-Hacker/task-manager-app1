@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './features/login/login.component';
+import { SignupComponent } from './features/signup/signup.component';
+import { UserDetailsComponent } from './features/user-details/user-details.component';
+import { HomeComponent } from './features/home/home.component';
 import { TaskListComponent } from './task-list/task-list.component';
-import { TaskFormComponent } from './task-form/task-form.component';
+import { TaskFormComponent } from './features/task-form/task-form.component';
 import { authGuard } from './guards/auth.guard';
 
 

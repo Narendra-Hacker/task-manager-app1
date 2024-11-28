@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations'; 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './features/login/login.component';
+import { SignupComponent } from './features/signup/signup.component';
+import { UserDetailsComponent } from './features/user-details/user-details.component';
+import { HomeComponent } from './features/home/home.component';
 import { TaskListComponent } from './task-list/task-list.component';
-import { TaskFormComponent } from './task-form/task-form.component';
+import { TaskFormComponent } from './features/task-form/task-form.component';
 import { TaskStatusFilterPipe } from './task-list/task-status-filter.pipe';
-import { HighlightTaskDirective } from './task-list/highlight-task.directive';
+import { HighlightTaskDirective } from './features/task-list/highlight-task.directive';
 
 // Angular Forms
 import { FormsModule } from '@angular/forms';
